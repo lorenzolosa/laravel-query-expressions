@@ -11,7 +11,9 @@ use Tpetry\QueryExpressions\Value\Value;
 
 it('can compute the last day of month of a column')
     ->expect(new LastDayOfMonth('date'))
-    ->toBeExecutable()
+    ->toBeExecutable(function (Blueprint $table) {
+        $table->date('date');
+    })
     ->toBeMysql('LAST_DAY(`date`)')
     ->toBePgsql('DATE_TRUNC(\'month\', "date") + interval \'1 month - 1 day\'')
     ->toBeSqlite('DATE("date", \'start of month\', \'+1 month\', \'-1 day\')')
