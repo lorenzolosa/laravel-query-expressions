@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use Illuminate\Database\Schema\Blueprint;
 use Tpetry\QueryExpressions\Function\Time\LastDayOfMonth;
 use Tpetry\QueryExpressions\Value\Value;
 
