@@ -2,12 +2,8 @@
 
 declare(strict_types=1);
 
-use Illuminate\Database\Query\Expression;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\DB;
 use Tpetry\QueryExpressions\Function\Time\LastDayOfMonth;
 use Tpetry\QueryExpressions\Value\Value;
-
 
 it('can compute the last day of month of a column')
     ->expect(new LastDayOfMonth('date'))
